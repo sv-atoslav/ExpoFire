@@ -1,17 +1,18 @@
-from firebase.modules.firebaseExploit import *
+from .modules.firebaseExploit import ExploitByExpoFileTool
+
 
 def expofire():
-	banner()
-	print("{}[*]{} Input settings for exploit: ".format(BLUE, NORMAL))
-	firebaseInstance = input("\t> Enter Firebase DB name : ")
-	File = input("\t> Enter Your File Name: ")
-	Name = input("\t> Enter Your Name: ")
-	Nick_Name = input("\t> Enter Your Username: ")
-	Email = input("\t> Enter Your Email: ")
-	Message = input("\t> Enter Your Message : ")
+    # TODO: add cli --arguments for no uotput after start
+    print("Input settings for exploit: ")
+    firebase_instance = input("\t> Enter Firebase DB name : ")
+    file = input("\t> Enter Your File Name: ")
+    name = input("\t> Enter Your Name: ")
+    nick_name = input("\t> Enter Your Username: ")
+    email = input("\t> Enter Your Email: ")
+    message = input("\t> Enter Your Message : ")
 
-	expofire= exploit(firebaseInstance, File, Name, Nick_Name, Email, Message)
-	expofire.firebaseExploit()
+    return ExploitByExpoFileTool(firebase_instance, file, name, nick_name, email, message).firebase_exploit()
+
 
 if __name__ == '__main__':
-	expofire()
+    expofire()
